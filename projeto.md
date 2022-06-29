@@ -72,9 +72,11 @@ Seguir padrão REST para as rotas e controllers. Criar padrão repository para c
 
 ### Backlog
 - [ ] Criar cadastro de usuário
-- [ ] Criar form de autenticação
-- [ ] Implantar regra de login (somente usuários autenticados podema acessar)
+- [ ] Criar testes do sistema de login (após conseguir criar usuários e logar normalmente)
 
 ### Fazendo
+
 ### Feito
+- [x] Criar form de autenticação
+- [x] Implantar regra de login (somente usuários autenticados podema acessar)
 - [x] Implantar bootstrap

@@ -14,4 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/',[LoginController::class, 'index']);
+Route::get('/login',[LoginController::class,'loginForm'])->name('login');
+Route::post('/login',[LoginController::class,'login']);
+
+Route::middleware('auth')->group(function(){
+    Route::get('/',[LoginController::class, 'index']);
+});
+
+
