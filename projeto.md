@@ -3,46 +3,47 @@
 Projeto de helpdesk feito em Laravel. 
 
 ## Models
-- Usuário
+- User
     - id
-    - nome
+    - name
     - email
-    - senha
-    - equipe(fk Equipe)
+    - password
+    - team_id(fk Team)
 
-- Equipe
-    - nome
-    - usuarios(fk N para 1 Usuario)
+- Team
+    - id
+    - name
+    - users(fk N para 1 User)
 
-- Chamado
-    - nome
-    - descrição
-    - tipo (fk TipoChamado)
-    - categoria(fk Categoria)
-    - atividades (fk N para 1 Atividade)
-    - finalizado (bool)
-    - data criação
-    - data finalização(nullable)
-    - finalizadoPorUsuario(fk Usuario)
+- Ticket
+    - name
+    - description
+    - type_id (fk TicketType)
+    - category_id(fk Category)
+    - activities (fk N para 1 Activity)
+    - finished (bool)
+    - created_date
+    - finished_date(nullable)
+    - finished_by_user_id(fk User)
 
-- Atividade
-    - nome
-    - data
-    - usuario (fk Usuario)
-    - chamado (fk Chamado)
+- Activity
+    - name
+    - date
+    - user_id (fk Usuario)
+    - ticket_id (fk Ticket)
 
-- TipoChamado
-    - nome
-    - chamados(fk N para 1 Chamado)
+- TicketType
+    - name
+    - tickets(fk N para 1 Ticket)
 
-- Categoria
-    - nome
-    - chamados (fk N para 1 Chamado)
+- Category
+    - name
+    - tickets (fk N para 1 Ticket)
 
-- Cliente
-    - nome
-    - descrição
-    - equipe(fk Equipe)
+- Client
+    - name
+    - description
+    - team_id(fk Team)
 
 ## Regras de negócio
 - Usuário tem login
@@ -64,3 +65,16 @@ Projeto de helpdesk feito em Laravel.
 
 ## Observações
 Seguir padrão REST para as rotas e controllers. Criar padrão repository para cada Model [link](https://www.twilio.com/blog/repository-pattern-in-laravel-application)
+- lista de resources para padronização de rotas e controllers [link](https://laravel.com/docs/9.x/controllers#actions-handled-by-resource-controller)
+
+
+## Tarefas
+
+### Backlog
+- [ ] Criar cadastro de usuário
+- [ ] Criar form de autenticação
+- [ ] Implantar regra de login (somente usuários autenticados podema acessar)
+
+### Fazendo
+### Feito
+- [x] Implantar bootstrap
