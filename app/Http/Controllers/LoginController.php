@@ -18,6 +18,9 @@ class LoginController extends Controller
         if(!Auth::attempt($request->only('email','password'))){
             return redirect()->back()->withErrors("E-mail ou senha incorretos");
         }
+
+        return redirect()->route('ticket_list');
+        
     }
 
     public function index()

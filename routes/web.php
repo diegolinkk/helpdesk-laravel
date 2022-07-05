@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\LoginController;
+use App\Http\Controllers\{LoginController, TicketController, UserController};
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,8 +17,18 @@ use Illuminate\Support\Facades\Route;
 Route::get('/login',[LoginController::class,'loginForm'])->name('login');
 Route::post('/login',[LoginController::class,'login']);
 
+Route::controller(UserController::class)->group(function () {
+    Route::get('/user/create','index')->name('create_user');
+    Route::post('/user/create','store');
+});
+
 Route::middleware('auth')->group(function(){
     Route::get('/',[LoginController::class, 'index']);
+
+    Route::controller(TicketController::class)->group(function () {
+        Route::get('/','index')->name('ticket_list');
+    });
+
 });
 
 

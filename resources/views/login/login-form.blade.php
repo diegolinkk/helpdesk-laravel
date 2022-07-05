@@ -26,4 +26,8 @@
     </div>
 
 </form>
+
+<div>
+    <a href="{{route('create_user')}}">Cadastro de novo usuário</a>
+</div>
 @endsection
