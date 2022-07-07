@@ -11,6 +11,10 @@
     </div>
 @endif
 
+@if(session('userCreatedMessage'))
+        <div class="alert alert-success">{{session('userCreatedMessage')}} </div>
+@endif
+
 <form action="#" method="post">
     @csrf
     <div class="mb-3">
