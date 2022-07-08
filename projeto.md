@@ -71,11 +71,15 @@ Seguir padrão REST para as rotas e controllers. Criar padrão repository para c
 ## Tarefas
 
 ### Backlog
-- [ ] Criar testes do sistema de login (após conseguir criar usuários e logar normalmente)
+- [ ] Criar cadastro de equipes
+- [ ] Criar cadastro de usuários em uma equipe
 
 ### Fazendo
 
 ### Feito
+- [x] Criar tabela de equipes (Teams)
+- [x] Criar fk da equipe no usuário(User)
+- [x] Criar testes do sistema de login (após conseguir criar usuários e logar normalmente)
 - [x] Criar cadastro de usuário
 - [x] Criar form de autenticação
 - [x] Implantar regra de login (somente usuários autenticados podema acessar)
