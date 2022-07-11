@@ -8,6 +8,6 @@ class TicketController extends Controller
 {
     public function index()
     {
-        return "parabéns, você está logado";
+        return view('ticket.index');
     }
 }

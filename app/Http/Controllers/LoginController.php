@@ -22,11 +22,4 @@ class LoginController extends Controller
         return redirect()->route('ticket_list');
         
     }
-
-    public function index()
-    {
-        //rota apenas para teste temporário - remover posteriormente
-        return "Seja bem vindo usuário";
-    }
-
 }

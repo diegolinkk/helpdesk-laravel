@@ -23,8 +23,6 @@ Route::controller(UserController::class)->group(function () {
 });
 
 Route::middleware('auth')->group(function(){
-    Route::get('/',[LoginController::class, 'index']);
-
     Route::controller(TicketController::class)->group(function () {
         Route::get('/','index')->name('ticket_list');
     });
