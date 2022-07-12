@@ -8,7 +8,9 @@
   </head>
   <body>
 
-    @include('navbar')
+    @auth
+      @include('navbar')
+    @endauth
 
     <div class="container-fluid">
       @yield('content')
