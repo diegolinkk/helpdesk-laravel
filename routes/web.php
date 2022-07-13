@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\{LoginController, TeamController, TicketController, UserController};
+use App\Http\Controllers\{LoginController, ManageTeamController, TeamController, TicketController, UserController};
 use App\Models\Team;
 use Illuminate\Support\Facades\Route;
 
@@ -30,6 +30,10 @@ Route::middleware('auth')->group(function(){
 
     Route::controller(TeamController::class)->group(function() {
         Route::get('/teams','index')->name('team_list');
+    });
+
+    Route::middleware('admin')->group(function(){
+        Route::get('/teams/manage',[ManageTeamController::class,'index'])->name('manage_team');
     });
 
 });

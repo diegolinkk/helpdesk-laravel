@@ -93,13 +93,15 @@ Seguir padrão REST para as rotas e controllers. Criar padrão repository para c
 - esse usuário não admin não tem acesso ao painel de gerenciamento (nem se tentar forçar na request)
 
 ### Backlog
-[ ] - criar menu de gerenciar equipes para admin
-[ ] - criar cadastro de usuários dentro do gerenciamento de equipes
-[ ] - assegurar que um usuário não admin NÃO consiga administrar equipe
-[ ] - assegurar que um admin NÃO consiga administrar outras equipes
-[ ] - fazer bateria de testes para essas features acima
+[ ] - fazer bateria de testes para a feature 2
 
 ### Fazendo
+[ ] - criar menu de gerenciar equipes para admin (rota e controller ja criados)
+    [ ] - adicionar e remover usuários
+    [ ] - adicionar e remover o privilégio de admin
+    [ ] - resetar senha do usuário
 
 ### Feito
+[x] - assegurar que um admin NÃO consiga administrar outras equipes - a rota não aceita parâmetros mas sim pega os dados do usuário logado
+[x] - assegurar que um usuário não admin NÃO consiga administrar equipe
 [x] - criar campo de cadastro para equipe no ato de cadastrar usuário
