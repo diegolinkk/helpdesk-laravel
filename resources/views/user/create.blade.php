@@ -16,6 +16,13 @@
             <label for="password" class="form-label">Senha: </label>
             <input type="password" name="password" id="password" class="form-control">
         </div>
+
+            
+        <div class="mb-3">
+            <label for="team_name" class="form-label">Nome da sua Equipe</label>
+            <input type="text" name="team_name" id="team_name" class="form-control">
+        </div>
+
         <button type="submit" class="btn btn-primary">Enviar</button>
 
     </form>
