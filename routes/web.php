@@ -34,6 +34,12 @@ Route::middleware('auth')->group(function(){
 
     Route::middleware('admin')->group(function(){
         Route::get('/teams/manage',[ManageTeamController::class,'index'])->name('manage_team');
+
+        Route::get('/teams/manage/create-user',[ManageTeamController::class,'createTeamUserForm'])->name('create_user_team');
+        Route::post('/teams/manage/create-user',[UserController::class,'createTeamUser']);
+
+        Route::get('/user/delete/{userId}',[UserController::class,'destroy'])->name('delete_user');
+    
     });
 
 });

@@ -97,9 +97,10 @@ Seguir padrão REST para as rotas e controllers. Criar padrão repository para c
 
 ### Fazendo
 [ ] - criar menu de gerenciar equipes para admin (rota e controller ja criados)
-    [ ] - adicionar e remover usuários
-    [ ] - adicionar e remover o privilégio de admin
-    [ ] - resetar senha do usuário
+    [x] - adicionar usuário
+    [x] - remover usuário
+    [ ] - editar usuário (não é possível trocar equipe - nem trocar a sneha)
+    [ ] - trocar senha usuário
 
 ### Feito
 [x] - assegurar que um admin NÃO consiga administrar outras equipes - a rota não aceita parâmetros mas sim pega os dados do usuário logado
