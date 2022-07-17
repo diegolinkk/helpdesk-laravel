@@ -18,7 +18,7 @@
         <li>
         {{$user->id}} - {{$user->name}}
         <a href="{{route('user.show',$user->id)}}">editar</a>
-        <a href="#">atualizar senha</a>
+        <a href="{{route('user.update_password',$user->id)}}">atualizar senha</a>
         
         <a href="{{route('delete_user', $user->id)}}">remover</a> 
         </li>

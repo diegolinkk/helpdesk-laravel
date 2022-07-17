@@ -71,8 +71,22 @@ class UserController extends Controller
         return redirect()->route('manage_team');
     }
 
+    public function updatePasswordForm($userId, Request $request)
+    {
+        $user = User::find($userId);
+        return view('user.update-password',[
+            'user' => $user,
+        ]);
+    }
 
-
+    public function updatePassword($userId,Request $request)
+    {
+        $user = User::find($userId);
+        $user->password = Hash::make($request->password);
+        $user->save();
+        return redirect()->route('manage_team');
+    }
 }
+
 
 
