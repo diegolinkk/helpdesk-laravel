@@ -56,4 +56,23 @@ class UserController extends Controller
         return redirect()->back()->with('success','Usuário removido com sucesso');
     }
 
+    public function show($userId)
+    {
+        $user = User::find($userId);
+        return view('user.show',['user' => $user]);
+    }
+
+    public function update(Request $request)
+    {
+        $user = User::find($request->id);
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->save();
+        return redirect()->route('manage_team');
+    }
+
+
+
 }
+
+

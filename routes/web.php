@@ -39,6 +39,9 @@ Route::middleware('auth')->group(function(){
         Route::post('/teams/manage/create-user',[UserController::class,'createTeamUser']);
 
         Route::get('/user/delete/{userId}',[UserController::class,'destroy'])->name('delete_user');
+
+        Route::get('/user/{userId}',[UserController::class,'show'])->name('user.show');
+        Route::post('/user/{userId}',[UserController::class,'update'])->name('user.update');
     
     });
 
