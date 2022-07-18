@@ -18,7 +18,8 @@ class LoginTest extends TestCase
         $this->user = [
             'name' => 'test',
             'email' => 'test@test.com',
-            'password' => 'test12345#'
+            'password' => 'test12345#',
+            'team_name' => 'team_test',
         ];
 
     }

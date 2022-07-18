@@ -17,7 +17,7 @@ class UserController extends Controller
 
     public function store(Request $request)
     {
-        $teamData = ['name' => $request->name];
+        $teamData = ['name' => $request->team_name];
         $team = Team::create($teamData);
         
         $data = $request->except('_token');

@@ -94,6 +94,11 @@ Seguir padrão REST para as rotas e controllers. Criar padrão repository para c
 
 ### Backlog
 [ ] - fazer bateria de testes para a feature 2
+    [x] - teste adicionar usuário
+    [x] - teste remover usuário
+    [x] - teste editar usuário (não é possível trocar equipe - nem trocar a senha)
+    [ ] - teste trocar senha usuário
+    [ ] - teste Garantir que um admin de equipe consiga atualizar SOMENTE USUÁRIOS DA PRÓPRIA EQUIPE - TESTAR
 
 ### Fazendo
 
