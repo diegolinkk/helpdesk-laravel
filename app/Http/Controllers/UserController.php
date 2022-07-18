@@ -65,26 +65,49 @@ class UserController extends Controller
     public function update(Request $request)
     {
         $user = User::find($request->id);
-        $user->name = $request->name;
-        $user->email = $request->email;
-        $user->save();
+
+        //admin user can only edit own team user
+        if(Auth::user()->team_id == $user->team_id)
+        {
+            $user->name = $request->name;
+            $user->email = $request->email;
+            $user->save();
+            return redirect()->route('manage_team');
+        }
+
         return redirect()->route('manage_team');
+        
     }
 
     public function updatePasswordForm($userId, Request $request)
     {
+        
+        //admin user can only edit own team user
         $user = User::find($userId);
-        return view('user.update-password',[
-            'user' => $user,
-        ]);
+        if(Auth::user()->team_id == $user->team_id)
+        {
+            return view('user.update-password',[
+                'user' => $user,
+            ]);
+        }
+
+        return redirect()->route('manage_team');
     }
 
     public function updatePassword($userId,Request $request)
     {
+        
+        //admin user can only edit own team user
         $user = User::find($userId);
-        $user->password = Hash::make($request->password);
-        $user->save();
+        if(Auth::user()->team_id == $user->team_id)
+        {
+            $user->password = Hash::make($request->password);
+            $user->save();
+            return redirect()->route('manage_team');
+        }
+
         return redirect()->route('manage_team');
+
     }
 }
 

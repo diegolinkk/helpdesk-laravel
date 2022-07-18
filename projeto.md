@@ -96,14 +96,14 @@ Seguir padrão REST para as rotas e controllers. Criar padrão repository para c
 [ ] - fazer bateria de testes para a feature 2
 
 ### Fazendo
-[ ] - criar menu de gerenciar equipes para admin (rota e controller ja criados)
+
+### Feito
+[x] - criar menu de gerenciar equipes para admin (rota e controller ja criados)
     [x] - adicionar usuário
     [x] - remover usuário
     [x] - editar usuário (não é possível trocar equipe - nem trocar a sneha)
     [x] - trocar senha usuário
-    [ ] - (next) Garantir que um admin de equipe consiga atualizar SOMENTE USUÁRIOS DA PRÓPRIA EQUIPE - TESTAR
-
-### Feito
+    [x] - Garantir que um admin de equipe consiga atualizar SOMENTE USUÁRIOS DA PRÓPRIA EQUIPE - TESTAR
 [x] - assegurar que um admin NÃO consiga administrar outras equipes - a rota não aceita parâmetros mas sim pega os dados do usuário logado
 [x] - assegurar que um usuário não admin NÃO consiga administrar equipe
 [x] - criar campo de cadastro para equipe no ato de cadastrar usuário
