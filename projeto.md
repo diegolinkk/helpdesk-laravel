@@ -93,12 +93,6 @@ Seguir padrão REST para as rotas e controllers. Criar padrão repository para c
 - esse usuário não admin não tem acesso ao painel de gerenciamento (nem se tentar forçar na request)
 
 ### Backlog
-[ ] - fazer bateria de testes para a feature 2
-    [x] - teste adicionar usuário
-    [x] - teste remover usuário
-    [x] - teste editar usuário (não é possível trocar equipe - nem trocar a senha)
-    [ ] - teste trocar senha usuário
-    [ ] - teste Garantir que um admin de equipe consiga atualizar SOMENTE USUÁRIOS DA PRÓPRIA EQUIPE - TESTAR
 
 ### Fazendo
 
@@ -112,3 +106,13 @@ Seguir padrão REST para as rotas e controllers. Criar padrão repository para c
 [x] - assegurar que um admin NÃO consiga administrar outras equipes - a rota não aceita parâmetros mas sim pega os dados do usuário logado
 [x] - assegurar que um usuário não admin NÃO consiga administrar equipe
 [x] - criar campo de cadastro para equipe no ato de cadastrar usuário
+
+### Testes
+[x] - fazer bateria de testes para a feature 2
+    [x] - teste adicionar usuário
+    [x] - teste remover usuário
+    [x] - teste editar usuário (não é possível trocar equipe - nem trocar a senha)
+    [x] - teste trocar senha usuário
+    [x] - teste Garantir que um admin de equipe consiga atualizar SOMENTE USUÁRIOS DA PRÓPRIA EQUIPE - TESTAR
+
+---

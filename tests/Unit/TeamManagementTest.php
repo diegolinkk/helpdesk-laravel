@@ -4,6 +4,7 @@ namespace Tests\Unit;
 
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Facades\Hash;
 use Tests\TestCase;
 
 class TeamManagementTest extends TestCase
@@ -85,6 +86,74 @@ class TeamManagementTest extends TestCase
             'name' => $newName,
             'email' => $newEmail,
         ]);
+    }
+
+    public function testChangePasswordTeamUser()
+    {
+        $this->post('/login',$this->adminUser);
+        $this->post('/teams/manage/create-user',$this->userData);
+
+        $createdTeamUser = User::where([
+            'name' => 'Test User'])
+            ->get()[0];
+
+        $oldPassword = $createdTeamUser->password;
+        
+        //verify current password before change it
+        $this->assertDatabaseHas('users',[
+            'password' => $oldPassword
+        ]);
+
+        //now we will change the password user
+        $this->post("/user/update-password/{$createdTeamUser->id}",['password' => 'abcdeifh1']);
+        
+        //verify current password has missing
+        $this->assertDatabaseMissing('users',[
+            'password' => $oldPassword
+        ]);
+    }
+
+    public function testAdminUsersCanOnlyUpgradeInfosFromOwnTeamUsers()
+    {
+        //login and create team user
+        $this->post('/login',$this->adminUser);
+        $this->post('/teams/manage/create-user',$this->userData);
+
+        //change team from current team user
+        $teamUser = User::find(2);
+        $teamUser->team_id = 2;
+        $teamUser->save();
+
+        $userId = 2;
+        $newName = 'new name';
+        $newEmail = 'new@email.com';
+
+        //trying to update admin user info
+        $this->post('user/2',[
+            'id' => $userId,
+            'name' => $newName,
+            'email' => $newEmail
+
+        ]);
+
+        //assert the change was failed (nothing was changed) 
+        $this->assertDatabaseHas('users',[
+            'name' => $this->userData['name'],
+            'email' => $this->userData['email'],
+        ]);
+
+        $currentTeamUserPasswordHash = User::find(2)->password;
+
+        //trying to update admin user password
+        $this->post('users/update-password/2',[
+            'password' => '8192389123912'
+        ]);
+
+        //assert the change was failed (nothing was changed)
+        $this->assertDatabaseHas('users',[
+            'password' => $currentTeamUserPasswordHash
+        ]);
+
     }
 
 }
