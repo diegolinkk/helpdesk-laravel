@@ -116,3 +116,27 @@ Seguir padrão REST para as rotas e controllers. Criar padrão repository para c
     [x] - teste Garantir que um admin de equipe consiga atualizar SOMENTE USUÁRIOS DA PRÓPRIA EQUIPE - TESTAR
 
 ---
+
+## Feature 3 - Chamados
+### Contexto
+O usuário (tanto admin como não admin) poderá criar chamados de acordo com os campos definidos na tabela. Dentro desse formulário, ao lado do campo de categoria e tipo de chamado, existirá um link para criação da chave estrangeira. 
+Quando o usuário abrir o chamado, o usuário vinculado será o mesmo, mas é possível fazer a alteração do chamado (listando todos os usuários da equipe).
+Cada chamado é vinculado diretamente à uma equipe, onde todos os usuários da mesma equipe podem ver esses chamados mas não podem ver os chamados de outras equipes (nem mesmo se tentar forçar via rota).
+Os chamados abertos devem aparecer primeiro, seguidos dos chamados fechados.
+Os comandos de fechar/abrir chamado devem ser feitos diretamente e não alterando seu status, pois 
+Por enquanto os chamados não terão atividades vinculadas.
+
+### Backlog
+[ ] - Criar banco de dados e modelos de tipo de chamado
+[ ] - Criar banco de dados e modelos de categoria de chamado
+[ ] - Criar banco de dados e modelos de chamados
+[ ] - Criar formulário de criação de categoria
+[ ] - Criar formulário de criação de tipo de chamado
+[ ] - Criar formulário de criação de chamados
+[ ] - Lista de chamados
+[ ] - Criar função de fechar de chamados
+### Fazendo
+### Feito
+
+
+### Testes
