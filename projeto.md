@@ -20,6 +20,7 @@ Projeto de helpdesk feito em Laravel.
     - description
     - type_id (fk TicketType)
     - category_id(fk Category)
+    - team_id(fk Team)
     - activities (fk N para 1 Activity)
     - finished (bool)
     - created_date
@@ -127,10 +128,14 @@ Os comandos de fechar/abrir chamado devem ser feitos diretamente e não alterand
 Por enquanto os chamados não terão atividades vinculadas.
 
 ### Backlog
-[ ] - Criar banco de dados e modelos de tipo de chamado
-[ ] - Criar banco de dados e modelos de categoria de chamado
-[ ] - Criar banco de dados e modelos de chamados
-[ ] - Criar formulário de criação de categoria
+[x] - Criar banco de dados e modelos de tipo de chamado
+[x] - Criar banco de dados e modelos de categoria de chamado
+[x] - Criar banco de dados e modelos de chamados
+    [x] - Vincular com tipo de chamado
+    [x] - Vincular com tipo de categoria
+    [x] - Vincular com tipo de equipe
+    [x] - Vincular com finalizado por usuário
+[ ] - Criar formulário de criação de categoria  
 [ ] - Criar formulário de criação de tipo de chamado
 [ ] - Criar formulário de criação de chamados
 [ ] - Lista de chamados
