@@ -137,10 +137,11 @@ Por enquanto os chamados não terão atividades vinculadas.
     [x] - Vincular com finalizado por usuário
 [ ] - Criar formulário de criação de categoria  
 [ ] - Criar formulário de criação de tipo de chamado
-[ ] - Criar formulário de criação de chamados
 [ ] - Lista de chamados
 [ ] - Criar função de fechar de chamados
 ### Fazendo
+[ ] - Criar formulário de criação de chamados
+parei em TicketController.php > create (criar lógica de salvar no banco de dados)
 ### Feito
 
 

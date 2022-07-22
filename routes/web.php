@@ -24,12 +24,14 @@ Route::controller(UserController::class)->group(function () {
 });
 
 Route::middleware('auth')->group(function(){
-    Route::controller(TicketController::class)->group(function () {
-        Route::get('/','index')->name('ticket_list');
+    Route::get('/',function(){ 
+        return redirect()->route('ticket_list');
     });
 
-    Route::controller(TeamController::class)->group(function() {
-        Route::get('/teams','index')->name('team_list');
+    Route::controller(TicketController::class)->group(function () {
+        Route::get('/ticket','index')->name('ticket_list');
+        Route::get('/ticket/create','formCreate')->name('ticket_create');
+        Route::post('/ticket/create','create');
     });
 
     Route::middleware('admin')->group(function(){

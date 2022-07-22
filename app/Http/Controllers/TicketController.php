@@ -10,4 +10,16 @@ class TicketController extends Controller
     {
         return view('ticket.index');
     }
+
+    public function formCreate()
+    {
+        return view('ticket.create');
+    }
+
+    public function create(Request $request)
+    {
+        //parei aqui
+         return $request->all();
+    }
+
 }
