@@ -19,12 +19,14 @@
         <div class="row mb-3">
 
             <div class="col">
+                
                 <select name="type_id" id="type_id" class="form-select">
                     <option selected>Tipo de chamado</option>
                     @foreach($ticketTypes as $ticketType)
                         <option value="{{$ticketType->id}}">{{$ticketType->name}}</option>
                     @endforeach
                 </select>
+                <a href="{{route('ticketType.store')}}" class="link-primary">Criar tipo de chamado</a>
             </div>
 
             <div class="col">
@@ -36,6 +38,7 @@
                         <option value="{{$category->id}}"> {{$category->name}} </option>
                     @endforeach
                 </select>
+                <a href="#" class="link-primary">Criar categoria</a>
             </div>
             
         </div>

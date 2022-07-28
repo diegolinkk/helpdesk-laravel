@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\{LoginController, ManageTeamController, TeamController, TicketController, UserController};
+use App\Http\Controllers\{LoginController, ManageTeamController, TeamController, TicketController, UserController,TicketTypeController};
 use App\Models\Team;
 use Illuminate\Support\Facades\Route;
 
@@ -32,6 +32,11 @@ Route::middleware('auth')->group(function(){
         Route::get('/ticket','index')->name('ticket_list');
         Route::get('/ticket/create','formCreate')->name('ticket_create');
         Route::post('/ticket/create','create');
+    });
+
+    Route::controller(TicketTypeController::class)->group(function(){
+        Route::get('/ticket-type','storeForm')->name('ticketType.store');
+        Route::post('/ticket-type','store');
     });
 
     Route::middleware('admin')->group(function(){
