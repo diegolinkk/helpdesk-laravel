@@ -2,6 +2,9 @@
 
 @section('content')
     <h1>Cadastro de chamado:</h1>
+    @if(session('ticketTypeCreated'))
+        <div class="alert alert-success">{{session('ticketTypeCreated')}}</div>
+    @endif
     <form action="#" method="post">
         @csrf
         <div class="row mb-3">
@@ -19,23 +22,28 @@
         <div class="row mb-3">
 
             <div class="col">
-                
+                <label for="type_id">tipo de chamado:</label>
                 <select name="type_id" id="type_id" class="form-select">
-                    <option selected>Tipo de chamado</option>
-                    @foreach($ticketTypes as $ticketType)
-                        <option value="{{$ticketType->id}}">{{$ticketType->name}}</option>
+                    @foreach($ticketTypes as $index => $ticketType)
+                        <option 
+                        @if($index == 0)
+                            selected
+                        @endif
+                        value="{{$ticketType->id}}">{{$ticketType->name}}</option>
                     @endforeach
                 </select>
                 <a href="{{route('ticketType.store')}}" class="link-primary">Criar tipo de chamado</a>
             </div>
 
             <div class="col">
+                <label for="category_id">Categoria:</label>
                 <select name="category_id" id="category_id" class="form-select">
-
-                    <option selected>Categoria</option>
-                    @foreach($categories as $category)
-                        {{$category->id}}
-                        <option value="{{$category->id}}"> {{$category->name}} </option>
+                    @foreach($categories as $index => $category)
+                        <option 
+                        @if($index == 0) 
+                            selected 
+                        @endif
+                        value="{{$category->id}}"> {{$category->name}} </option>
                     @endforeach
                 </select>
                 <a href="#" class="link-primary">Criar categoria</a>
@@ -44,11 +52,11 @@
         </div>
         <div class="row mb-3">
             <div class="col">
-                <label for="created_date" class="form-label">Created Date:</label>
+                <label for="created_date" class="form-label">Data de criação:</label>
                 <input type="date" name="created_date" id="created_date" class="form-control">
             </div>
             <div class="col">
-                <label for="finished_date" class="form-label">Finished Date:</label>
+                <label for="finished_date" class="form-label">Data de finalização:</label>
                 <input type="date" name="finished_date" id="finished_date" class="form-control">
             </div>
         </div>

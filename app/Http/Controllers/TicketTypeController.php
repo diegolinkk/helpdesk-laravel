@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\TicketType;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class TicketTypeController extends Controller
 {
@@ -14,7 +16,12 @@ class TicketTypeController extends Controller
 
     public function store(Request $request)
     {
-        return $request->all();
+        $ticketType = new TicketType();
+        $ticketType->name = $request->name;
+        $ticketType->team_id = Auth::user()->team->id;
+        $ticketType->save();
+        $name = $request->name;
+        return redirect()->route('ticket_create')->with('ticketTypeCreated',"Tipo de chamado: {$ticketType->name} criado com sucesso");
     }
 
 }

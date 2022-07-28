@@ -8,4 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class TicketType extends Model
 {
     use HasFactory;
+
+    public function team()
+    {
+        return $this->belongsTo(Team::class);
+    }
+
+    public function tickets()
+    {
+        return $this->hasMany(Ticket::class);
+    }
+
+
 }
