@@ -124,6 +124,8 @@ class TeamManagementTest extends TestCase
         $teamUser->team_id = 2;
         $teamUser->save();
 
+
+        //data that we'll try to change
         $userId = 2;
         $newName = 'new name';
         $newEmail = 'new@email.com';
@@ -141,6 +143,8 @@ class TeamManagementTest extends TestCase
             'name' => $this->userData['name'],
             'email' => $this->userData['email'],
         ]);
+
+        //now we will try to change the password from this same user
 
         $currentTeamUserPasswordHash = User::find(2)->password;
 

@@ -147,3 +147,34 @@ Por enquanto os chamados não terão atividades vinculadas.
 [x] - Criar formulário de criação de chamados
 
 ### Testes
+
+
+---
+Feature 4 - Roleta Russa
+### Contexto
+Para que os tickets não fiquem ociosos e não sejam atribuídos à um técnico. O ticket agora será atribuído ao técnico que esteja há mais tempo em ociosidade. Por exemplo:
+
+Ticket 1:
+- Maria (pega chamado)
+- João
+- Mané
+
+Ticket 2:
+- Maria 
+- João (pega chamado)
+- Mané
+
+Ticket 3:
+- Maria 
+- João
+- Mané (pega chamado)
+
+Ticket 4:
+- Maria (pega chamado novamente pq ja rodou a fila de todos os técnicos)
+- João
+- Mané 
+
+### Backlog
+### Fazendo
+### Feito
+### Testes
