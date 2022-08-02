@@ -17,8 +17,10 @@ class TicketController extends Controller
 
     public function formCreate()
     {
-        $categories = Category::all();
-        $ticketTypes = TicketType::all();
+        $userTeamId = Auth::user()->team->id;
+        $categories = Category::where('team_id',$userTeamId)->get();
+        $ticketTypes = TicketType::where('team_id',$userTeamId)->get();
+
         return view('ticket.create',[
             'categories' => $categories,
             'ticketTypes' => $ticketTypes,
@@ -40,6 +42,7 @@ class TicketController extends Controller
         if($request->finished_date)
         {
             $ticket->finished_date = $request->finished_date;
+            $ticket->finished = true;
         }
 
         $ticket->ticket_type_id = $request->type_id;

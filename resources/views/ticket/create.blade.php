@@ -46,7 +46,7 @@
                         value="{{$category->id}}"> {{$category->name}} </option>
                     @endforeach
                 </select>
-                <a href="#" class="link-primary">Criar categoria</a>
+                <a href="{{route('category.store')}}" class="link-primary">Criar categoria</a>
             </div>
             
         </div>
