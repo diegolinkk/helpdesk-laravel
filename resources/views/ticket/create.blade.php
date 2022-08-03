@@ -48,6 +48,17 @@
                 </select>
                 <a href="{{route('category.store')}}" class="link-primary">Criar categoria</a>
             </div>
+
+            <div class="col">
+                <label for="responsible_tech" >Técnico responsável:</label>
+                <select name="responsible_tech" id="responsible_tech" class="form-select">
+                    @foreach($responsibleTechs as $index => $tech)
+                    <option 
+                    @if($index ==0) selected @endif
+                    value="{{$tech->id}}"> {{$tech->name}}</option>
+                    @endforeach
+                </select>
+            </div>
             
         </div>
         <div class="row mb-3">

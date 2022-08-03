@@ -26,6 +26,7 @@ Projeto de helpdesk feito em Laravel.
     - created_date
     - finished_date(nullable)
     - finished_by_user_id(fk User)
+    - user(fk User)
 
 - Activity
     - name
@@ -135,7 +136,7 @@ Por enquanto os chamados não terão atividades vinculadas.
     [x] - Vincular com tipo de categoria
     [x] - Vincular com tipo de equipe
     [x] - Vincular com finalizado por usuário
-[ ] - Vincular técnico ao chamado
+[x] - Vincular técnico ao chamado
 [ ] - Criar função de fechar de chamados
 [ ] - Criar validação de formulário para o cadastro de chamado 
 [ ] - Criar validação de formulário para o cadastro de categoria 

@@ -19,4 +19,10 @@ class Ticket extends Model
         return $this->belongsTo(TicketType::class);
     }
 
+    public function responsibleTech()
+    {
+        //relacionamento onde o nome da função não bate com a coluna da chave estrangeira
+        return $this->belongsTo(User::class,'responsible_tech');
+    }
+
 }
