@@ -12,7 +12,10 @@ class TicketController extends Controller
 {
     public function index()
     {
-        return view('ticket.index');
+        $tickets = Ticket::all();
+        return view('ticket.index',[
+            'tickets' => $tickets,
+        ]);
     }
 
     public function formCreate()
