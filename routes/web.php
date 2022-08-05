@@ -32,6 +32,7 @@ Route::middleware('auth')->group(function(){
         Route::get('/ticket','index')->name('ticket_list');
         Route::get('/ticket/create','formCreate')->name('ticket_create');
         Route::post('/ticket/create','create');
+        Route::get('/ticket/{ticketId}/','show')->name('ticket.show');
     });
 
     Route::controller(TicketTypeController::class)->group(function(){

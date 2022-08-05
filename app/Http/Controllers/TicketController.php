@@ -59,4 +59,20 @@ class TicketController extends Controller
         return $ticket;
     }
 
+    public function show($ticketId,Request $request)
+    {
+        $teamUserId = Auth::user()->team->id;
+        $categories = Category::where('team_id',$teamUserId)->get();
+        $ticketTypes = TicketType::where('team_id',$teamUserId)->get();
+        $teamUsers = User::where('team_id',$teamUserId)->get();
+        $ticket = Ticket::find($ticketId);
+
+        return view('ticket.show',[
+            'ticket' => $ticket,
+            'categories' => $categories,
+            'ticketTypes' => $ticketTypes,
+            'teamUsers' => $teamUsers,
+        ]);
+    }
+
 }
