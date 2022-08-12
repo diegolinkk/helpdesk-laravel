@@ -13,7 +13,10 @@ class TicketController extends Controller
 {
     public function index()
     {
-        $tickets = Ticket::all();
+        //return only unfinished tickets
+        $tickets = Ticket::where(['finished'=> false])
+                ->orderBy('id','desc')
+                ->get();
         return view('ticket.index',[
             'tickets' => $tickets,
         ]);
@@ -56,7 +59,7 @@ class TicketController extends Controller
         $ticket->team_id = Auth::user()->team->id;
         $ticket->responsible_tech = $request->responsible_tech;
         $ticket->save();
-        return $ticket;
+        return redirect()->route('ticket_list');
     }
 
     public function show($ticketId,Request $request)
@@ -89,6 +92,15 @@ class TicketController extends Controller
             ->update($data);
         
         return Ticket::find($request->id);
+    }
+
+    public function finish($ticketId)
+    {
+        $ticket = Ticket::find($ticketId);
+        $ticket->finished = true;
+        $ticket->finished_date = date('Y-m-d');
+        $ticket->save();
+        return redirect()->route('ticket_list');
     }
 
 }

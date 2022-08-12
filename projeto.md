@@ -136,17 +136,17 @@ Por enquanto os chamados não terão atividades vinculadas.
     [x] - Vincular com tipo de categoria
     [x] - Vincular com tipo de equipe
     [x] - Vincular com finalizado por usuário
-[ ] - Criar função de fechar de chamados
 [ ] - Criar validação de formulário para o cadastro de chamado 
 [ ] - Criar validação de formulário para o cadastro de categoria 
 [ ] - Criar validação de formulário para o cadastro de tipo de chamado 
 [ ] - Criar bateria de testes
 
 ### Fazendo
-[ ] - Criar função de exibir detalhes do chamados
-obs - exibindo detalhes ok - falta fazer a função de update e de encerrar chamado (ja tem os botões)
 
 ### Feito
+[x] - Criar função de fechar de chamados
+[x] - Criar função de exibir detalhes do chamados
+[x] - Criar função de atualizar chamados
 [x] - Vincular técnico ao chamado
 [x] - Lista de chamados (não precisa ter visual refinado)
 [x] - Criar formulário de criação de categoria

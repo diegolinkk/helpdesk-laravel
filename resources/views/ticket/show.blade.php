@@ -87,6 +87,7 @@
 
             <div class="mb-3">
                 <button type="submit" class="btn btn-primary">Enviar</button>
+                <a href="{{route('ticket.finish',$ticket->id)}}" class="btn btn-secondary">Finalizar chamado</a>
             </div>
 
         </div>
