@@ -75,4 +75,20 @@ class TicketController extends Controller
         ]);
     }
 
+    public function update(Request $request)
+    {
+        $data = $request->except(['_token']);
+
+        
+        if(!$request->finished)
+        {
+            $data['finished'] = false;
+        }
+
+        $ticket = Ticket::where('id',"{$request->id}")
+            ->update($data);
+        
+        return Ticket::find($request->id);
+    }
+
 }

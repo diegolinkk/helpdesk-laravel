@@ -86,8 +86,7 @@
             </div>
 
             <div class="mb-3">
-                <a class="pe-2 btn btn-outline-primary" href="#">Salvar</a>
-                <a class="btn btn-outline-secondary" href="#">Encerrar Chamado</a>
+                <button type="submit" class="btn btn-primary">Enviar</button>
             </div>
 
         </div>
