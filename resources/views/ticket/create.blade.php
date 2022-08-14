@@ -2,6 +2,17 @@
 
 @section('content')
     <h1>Cadastro de chamado:</h1>
+
+    @if($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+            @foreach($errors->all() as $error)
+                <li>{{$error}}</li>
+            @endforeach
+            </ul>
+        </div>
+    @endif
+
     @if(session('ticketTypeCreated'))
         <div class="alert alert-success">{{session('ticketTypeCreated')}}</div>
     @endif

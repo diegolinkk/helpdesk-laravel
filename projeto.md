@@ -130,11 +130,11 @@ Por enquanto os chamados não terão atividades vinculadas.
 
 ### Backlog
 [ ] - Criar bateria de testes
-[ ] - Criar validação de formulário para o cadastro de chamado 
 
 ### Fazendo
 
 ### Feito
+[x] - Criar validação de formulário para o cadastro de chamado 
 [x] - Criar validação de formulário para o cadastro de tipo de chamado 
 [x] - Criar banco de dados e modelos de tipo de chamado
 [x] - Criar banco de dados e modelos de categoria de chamado

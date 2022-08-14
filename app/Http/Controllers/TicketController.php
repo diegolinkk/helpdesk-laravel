@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\TicketFormRequest;
 use App\Models\Category;
 use App\Models\Ticket;
 use App\Models\TicketType;
@@ -36,7 +37,7 @@ class TicketController extends Controller
         ]);
     }
 
-    public function create(Request $request)
+    public function create(TicketFormRequest $request)
     {
 
         $ticket = new Ticket();
