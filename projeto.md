@@ -129,6 +129,13 @@ Os comandos de fechar/abrir chamado devem ser feitos diretamente e não alterand
 Por enquanto os chamados não terão atividades vinculadas.
 
 ### Backlog
+[ ] - Criar bateria de testes
+[ ] - Criar validação de formulário para o cadastro de chamado 
+
+### Fazendo
+
+### Feito
+[x] - Criar validação de formulário para o cadastro de tipo de chamado 
 [x] - Criar banco de dados e modelos de tipo de chamado
 [x] - Criar banco de dados e modelos de categoria de chamado
 [x] - Criar banco de dados e modelos de chamados
@@ -136,14 +143,7 @@ Por enquanto os chamados não terão atividades vinculadas.
     [x] - Vincular com tipo de categoria
     [x] - Vincular com tipo de equipe
     [x] - Vincular com finalizado por usuário
-[ ] - Criar validação de formulário para o cadastro de chamado 
-[ ] - Criar validação de formulário para o cadastro de tipo de chamado 
-[ ] - Criar bateria de testes
-
-### Fazendo
-[ ] - Criar validação de formulário para o cadastro de categoria 
-
-### Feito
+[x] - Criar validação de formulário para o cadastro de categoria
 [x] - Criar função de fechar de chamados
 [x] - Criar função de exibir detalhes do chamados
 [x] - Criar função de atualizar chamados

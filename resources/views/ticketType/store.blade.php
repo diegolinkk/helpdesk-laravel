@@ -2,6 +2,16 @@
 
 @section('content')
     <div class="container-md">
+        @if($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach($errors->all() as $error)
+                    <li>{{$error}}</li>
+                @endforeach
+            </ul>
+        </div>
+        @endif
+
         <form action="#" method="post">
             @csrf
             <h1>Cadastro para Tipo de Chamado</h1>

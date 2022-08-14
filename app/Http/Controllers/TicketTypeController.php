@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\TicketType;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\TicketTypeFormRequest;
 
 class TicketTypeController extends Controller
 {
@@ -14,7 +15,7 @@ class TicketTypeController extends Controller
         return view('ticketType.store');
     }
 
-    public function store(Request $request)
+    public function store(TicketTypeFormRequest $request)
     {
         $ticketType = new TicketType();
         $ticketType->name = $request->name;
