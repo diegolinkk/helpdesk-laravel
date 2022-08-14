@@ -137,11 +137,11 @@ Por enquanto os chamados não terão atividades vinculadas.
     [x] - Vincular com tipo de equipe
     [x] - Vincular com finalizado por usuário
 [ ] - Criar validação de formulário para o cadastro de chamado 
-[ ] - Criar validação de formulário para o cadastro de categoria 
 [ ] - Criar validação de formulário para o cadastro de tipo de chamado 
 [ ] - Criar bateria de testes
 
 ### Fazendo
+[ ] - Criar validação de formulário para o cadastro de categoria 
 
 ### Feito
 [x] - Criar função de fechar de chamados
