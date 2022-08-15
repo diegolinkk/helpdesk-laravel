@@ -79,17 +79,18 @@ class TicketController extends Controller
         ]);
     }
 
-    public function update(Request $request)
+    public function update(int $ticketId, Request $request)
     {
         $data = $request->except(['_token']);
 
         
+        //aqui é porque checkbox marcada como 'falsa' não chega na requisição, então não conseguimos desmarcar um chamado
         if(!$request->finished)
         {
             $data['finished'] = false;
         }
 
-        $ticket = Ticket::where('id',"{$request->id}")
+        $ticket = Ticket::where('id',"{$ticketId}")
             ->update($data);
         
         return Ticket::find($request->id);

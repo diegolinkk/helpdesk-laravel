@@ -129,11 +129,18 @@ Os comandos de fechar/abrir chamado devem ser feitos diretamente e não alterand
 Por enquanto os chamados não terão atividades vinculadas.
 
 ### Backlog
-[ ] - Criar bateria de testes
 
 ### Fazendo
 
 ### Feito
+[x] - Criar bateria de testes
+    [x] - criar um tipo de chamado
+    [x] - um tipo de chamado com nome menor que 3 caracteres não pode ser criado
+    [x] - criar uma categoria
+    [x] - uma categoria com nome menor que 3 caracteres não pode ser criada
+    [x] - criar um chamado
+    [x] - alterar um chamado
+    [x] - encerrar um chamado
 [x] - Criar validação de formulário para o cadastro de chamado 
 [x] - Criar validação de formulário para o cadastro de tipo de chamado 
 [x] - Criar banco de dados e modelos de tipo de chamado

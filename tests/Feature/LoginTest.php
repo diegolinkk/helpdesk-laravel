@@ -27,7 +27,7 @@ class LoginTest extends TestCase
     public function testIfLoginIsWorkingCorrectly()
     {
         //assert if user can't access a protected login
-        $response = $this->get('/');
+        $response = $this->get('/ticket');
         $response->assertStatus(302);
 
         //creating a user
@@ -37,7 +37,7 @@ class LoginTest extends TestCase
         $this->post('login',$this->user);
 
         //then... the response must be ok (statuscode 200)
-        $response = $this->get('/');
+        $response = $this->get('/ticket');
         $response->assertStatus(200);
 
 
