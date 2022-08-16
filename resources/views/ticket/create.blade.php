@@ -65,8 +65,7 @@
                 <select name="responsible_tech" id="responsible_tech" class="form-select">
                     @foreach($responsibleTechs as $index => $tech)
                     <option 
-                    @if($index ==0) selected @endif
-                    value="{{$tech->id}}"> {{$tech->name}}</option>
+                    value="{{$tech->id}}">{{$tech->name}} -  ({{$tech->qtdTickets}} chamados)</option>
                     @endforeach
                 </select>
             </div>

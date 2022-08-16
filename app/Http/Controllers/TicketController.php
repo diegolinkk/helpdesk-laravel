@@ -30,6 +30,13 @@ class TicketController extends Controller
         $ticketTypes = TicketType::where('team_id',$userTeamId)->get();
         $responsibleTechs = User::where('team_id',$userTeamId)->get();
 
+        foreach($responsibleTechs as $tech)
+        {
+            $tech['qtdTickets'] = $tech->tickets->where('finished',false)->count();
+        }
+
+        $responsibleTechs = $responsibleTechs->sortBy('qtdTickets');
+
         return view('ticket.create',[
             'categories' => $categories,
             'ticketTypes' => $ticketTypes,
