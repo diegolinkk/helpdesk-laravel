@@ -7,6 +7,7 @@ use App\Models\Category;
 use App\Models\Ticket;
 use App\Models\TicketType;
 use App\Models\User;
+use App\Services\PriorizeTech;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -29,13 +30,9 @@ class TicketController extends Controller
         $categories = Category::where('team_id',$userTeamId)->get();
         $ticketTypes = TicketType::where('team_id',$userTeamId)->get();
         $responsibleTechs = User::where('team_id',$userTeamId)->get();
+        
+        $responsibleTechs = PriorizeTech::priorizeByLessActiveTickets($responsibleTechs);
 
-        foreach($responsibleTechs as $tech)
-        {
-            $tech['qtdTickets'] = $tech->tickets->where('finished',false)->count();
-        }
-
-        $responsibleTechs = $responsibleTechs->sortBy('qtdTickets');
 
         return view('ticket.create',[
             'categories' => $categories,
