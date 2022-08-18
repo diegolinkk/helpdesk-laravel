@@ -32,6 +32,7 @@ class TicketController extends Controller
         $responsibleTechs = User::where('team_id',$userTeamId)->get();
         
         $responsibleTechs = PriorizeTech::priorizeByLessActiveTickets($responsibleTechs);
+        return $responsibleTechs;
 
 
         return view('ticket.create',[
